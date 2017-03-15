@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="{{ site.url }}/assets/style.css">
 </head>
 <body>
+  <h1>{{ site.url | replace: 'https://', '' | replace: 'http://', '' | replace: '/', '' }}</h1>
   {{ content }}
   <script src="{{ site.url }}/assets/moment.min.js"></script>
   <script src="{{ site.url }}/assets/linkify.min.js"></script>
