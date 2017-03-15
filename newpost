@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#currenttime=$(node -e 'console.log(Date.now())')
+currenttime=$(date +%s)
+filename="_updates/$currenttime.md"
+touch $filename
+echo "---" >> $filename
+echo "---" >> $filename
+echo "$1" >> $filename
