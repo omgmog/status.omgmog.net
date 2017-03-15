@@ -1,0 +1,116 @@
+---
+---
+
+html {
+  font-size: calc(1em + .5vw);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #f5f8fa;
+  color: #14171a;
+  margin: 10%;
+  width: 60%;
+}
+
+article {
+  background-color: #fff;
+  border: 1px solid #e6ecf0;
+  padding: .5em;
+  padding-left: 4rem;
+  margin: 0;
+  overflow: hidden;
+  transition: background-color .2s ease;
+
+  + article {
+    border-top: 0;
+  }
+
+  &:first-of-type {
+    border-radius: .25em .25em 0 0;
+  }
+
+  &:last-of-type {
+    border-radius: 0 0 .25em .25em;
+  }
+
+  &:hover {
+    background-color: #f5f8fa;
+  }
+}
+
+.excerpt {
+  padding: 9px 0;
+}
+
+.date {
+  font-size: .6rem;
+}
+
+p,
+li {
+  font-size: .7rem;
+  line-height: 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+p {
+  margin: 0;
+
+  + p {
+    margin-top: 1em;
+  }
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  float: left;
+  margin-left: -3.5rem;
+  border-radius: .25rem;
+  border: 0;
+}
+
+a {
+  color: #1b95e0;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.share {
+  font-size: .8rem;
+  color: #aab8c2;
+
+  &:hover {
+    color: #17bf63;
+  }
+  span {
+    display: none;
+  }
+}
+
+.svg {
+
+  svg {
+    width: 100%;
+    height: auto;
+    fill: currentColor;
+  }
+
+  &-retweet {
+    width: 1.2em;
+    height: .9em;
+  }
+}
+
+
+@media (max-width: 800px) {
+  body {
+    width: auto;
+  }
+}
