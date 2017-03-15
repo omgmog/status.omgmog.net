@@ -6,7 +6,15 @@ layout: base
 {% for status in updates %}
   <article>
     <img src="assets/max.jpg" class="avatar">
-    <div class="date"><a href="{{ status.url }}" class="moment">{{ status.title }}</a></div>
+    <div class="date">
+      <a
+        href="{{ status.url }}"
+        class="moment"
+        title="{{ status.title | date_to_rfc822 }}"
+      >
+        {{ status.title | date_to_rfc822 }}
+      </a>
+    </div>
     <div class="excerpt">
       {{ status.content }}
     </div>

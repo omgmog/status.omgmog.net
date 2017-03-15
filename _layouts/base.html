@@ -21,7 +21,7 @@
         var _thisexcerpt = _this.querySelector('.excerpt');
         var _thisdate = _this.querySelector('.moment');
         linkifyElement(_thisexcerpt);
-        _thisdate.innerText = moment.unix(_thisdate.innerText).fromNow();
+        _thisdate.innerText = moment(_thisdate.innerText).fromNow();
       });
 
     }());
