@@ -1,6 +1,11 @@
 title: Status
 url: "https://status.omgmog.net"
 
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 collections:
   updates:
     output: true
