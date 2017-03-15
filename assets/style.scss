@@ -34,6 +34,9 @@ article {
   &:last-of-type {
     border-radius: 0 0 .25em .25em;
   }
+  &:only-of-type {
+    border-radius: .25em;
+  }
 
   &:hover {
     background-color: #f5f8fa;
@@ -43,9 +46,14 @@ article {
 .excerpt {
   padding: 9px 0;
 }
-
-.date {
+h3 {
   font-size: .6rem;
+  margin: 0;
+}
+.date {
+  font-weight: normal;
+  font-size: .9em;
+  color: #657786;
 }
 
 p,

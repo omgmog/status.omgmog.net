@@ -1,14 +1,17 @@
 <article>
   <img src="{{ site.url }}/assets/max.jpg" class="avatar">
-  <div class="date">
-    <a
-      href="{{ status.url }}"
-      class="moment"
-      title="{{ status.title | date_to_rfc822 }}"
-    >
-      {{ status.title | date_to_rfc822 }}
-    </a>
-  </div>
+  <h3>
+    <span class="name">{{ site.author.name }} </span>
+    <span class="date">&middot;
+      <a
+        href="{{ status.url }}"
+        class="moment"
+        title="{{ status.title | date_to_rfc822 }}"
+      >
+        {{ status.title | date_to_rfc822 }}
+      </a>
+    </span>
+  </h3>
   <div class="excerpt">
     {{ status.content }}
   </div>
