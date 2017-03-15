@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <style>
+    html {
+      font-size: calc(1em + .5vw);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    body {
+      background-color: #f5f8fa;
+      color: #14171a;
+      margin: 10%;
+      width: 60%;
+    }
+    article {
+      background-color: #fff;
+      border: 1px solid #e6ecf0;
+      padding: 9px 12px;
+      padding-left: 68px;
+      margin: 0;
+      overflow: hidden;
+      transition: background-color .2s ease;
+    }
+    article + article {
+      border-top: 0;
+    }
+    article:first-of-type {
+      border-radius: .25em .25em 0 0;
+    }
+    article:last-of-type {
+      border-radius: 0 0 .25em .25em;
+    }
+    article:hover {
+      background-color: #f5f8fa;
+    }
+    .date {
+      font-size: .6rem;
+    }
+    p {
+      font-size: .7rem;
+      line-height: 1rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      float: left;
+      margin-left: -58px;
+      border-radius: 5px;
+      border: 0;
+    }
+    a {
+      color: #1b95e0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  {{ content }}
+  <script src="assets/moment.min.js"></script>
+  <script src="assets/linkify.min.js"></script>
+  <script src="assets/linkify-element.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var posts = document.querySelectorAll('article');
+      [].forEach.call(posts, function (value, key) {
+        var _this = posts[key];
+        var _thisexcerpt = _this.querySelector('.excerpt');
+        var _thisdate = _this.querySelector('.moment');
+        linkifyElement(_thisexcerpt);
+        _thisdate.innerText = moment.unix(_thisdate.innerText).fromNow();
+      });
+
+    }());
+  </script>
+</body>
+</html>

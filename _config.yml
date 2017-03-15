@@ -1,0 +1,9 @@
+title: Status
+url: "https://status.omgmog.net"
+
+collections:
+  updates:
+    output: true
+    layout: update
+    permalink: /:title/
+

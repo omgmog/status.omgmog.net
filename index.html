@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+{% assign updates = site.updates | reverse %}
+{% for status in updates %}
+  <article>
+    <img src="assets/max.jpg" class="avatar">
+    <div class="date"><a href="{{ status.url }}" class="moment">{{ status.title }}</a></div>
+    <div class="excerpt">
+      {{ status.excerpt }}
+    </div>
+  </article>
+
+{% else %}
+  <p>Nothing here yet...</p>
+{% endfor %}
