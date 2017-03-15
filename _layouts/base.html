@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="{{ site.url }}/assets/style.css">
 </head>
 <body>
   {{ content }}
-  <script src="assets/moment.min.js"></script>
-  <script src="assets/linkify.min.js"></script>
-  <script src="assets/linkify-element.min.js"></script>
+  <script src="{{ site.url }}/assets/moment.min.js"></script>
+  <script src="{{ site.url }}/assets/linkify.min.js"></script>
+  <script src="{{ site.url }}/assets/linkify-element.min.js"></script>
   <script>
     (function () {
       'use strict';
