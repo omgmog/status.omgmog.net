@@ -1,5 +1,6 @@
 title: Status
 url: "https://status.omgmog.net"
+exclude: ["newpost"]
 
 markdown: kramdown
 kramdown:
