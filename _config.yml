@@ -1,5 +1,9 @@
 title: Status
 url: "https://status.omgmog.net"
+author:
+  github: omgmog
+  twitter: omgmog
+  name: Max Glenister
 exclude: ["newpost"]
 
 markdown: kramdown

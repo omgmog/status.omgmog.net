@@ -13,7 +13,7 @@
 
   <!-- twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@omgmog">
+  <meta name="twitter:site" content="@{{ site.author.twitter }}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
   <meta name="twitter:description" content="{{ page.excerpt | strip_html }}">
   <meta name="twitter:image" content="{{ site.url }}/assets/favicon.png">
@@ -23,7 +23,6 @@
 
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <link rel="canonical" href="{{ site.url }}" />
-  <link rel="author" href="https://plus.google.com/+MaxGlenister/posts" />
   <link rel="icon" type="image/png" href="{{ site.url }}/assets/favicon.png" />
 
   <link

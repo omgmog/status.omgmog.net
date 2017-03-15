@@ -1,11 +1,11 @@
 {% capture full_url %}{{ site.url}}{{ status.url }}{% endcapture %}
 {% assign full_url_length = full_url | size %}
-{% assign tweet_length = 127 %}
-{% comment %}140 - " via @omgmog" text and minus "..."{% endcomment %}
-{% capture truncate_to %}{{ tweet_length | minus: full_url_length }}{% endcapture %}
+{% assign twitter_user_length = site.author.twitter | size %}
+{% assign tweet_length = 140 %}
+{% capture truncate_to %}{{ tweet_length | minus: full_url_length | minus: twitter_user_length | minus: 7 }}{% endcapture %}
 {% capture tweet_content %}{{ status.content | strip_newlines | strip_html | truncate: truncate_to, "…" | cgi_escape }}{% endcapture %}
 <a
-  href="https://twitter.com/share?text={{ tweet_content }}&amp;url={{ full_url }}&amp;via=omgmog"
+  href="https://twitter.com/share?text={{ tweet_content }}&amp;url={{ full_url }}&amp;via={{ site.author.twitter }}"
   onclick="window.open(this.href,'twitter-share','width=550,height=235');return false;"
   class="share share-twitter"
 >
