@@ -4,6 +4,11 @@ url: "https://status.omgmog.net"
 collections:
   updates:
     output: true
-    layout: update
     permalink: /:title/
 
+defaults:
+  - scope:
+      path: ""
+      type: updates
+    values:
+      layout: update
