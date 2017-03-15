@@ -3,7 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- opengraph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/favicon.png">
+
+
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@omgmog">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta name="twitter:description" content="{{ page.excerpt | strip_html }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/favicon.png">
+
+
+  <!-- other -->
+
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="canonical" href="{{ site.url }}" />
+  <link rel="author" href="https://plus.google.com/+MaxGlenister/posts" />
+  <link rel="icon" type="image/png" href="{{ site.url }}/assets/favicon.png" />
+
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="{{ site.title }} - RSS Feed"
+    href="{{ site.url }}/feed.xml"
+  />
+  <link
+    rel="alternate"
+    type="application/json"
+    title="{{ site.title }} - JSON Feed"
+    href="{{ site.url }}/feed.json"
+  />
+
   <link rel="stylesheet" href="{{ site.url }}/assets/style.css">
 </head>
 <body>
