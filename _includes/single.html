@@ -1,0 +1,16 @@
+<article>
+  <img src="{{ site.url }}/assets/max.jpg" class="avatar">
+  <div class="date">
+    <a
+      href="{{ status.url }}"
+      class="moment"
+      title="{{ status.title | date_to_rfc822 }}"
+    >
+      {{ status.title | date_to_rfc822 }}
+    </a>
+  </div>
+  <div class="excerpt">
+    {{ status.content }}
+  </div>
+  {% include tweet_this.html %}
+</article>
