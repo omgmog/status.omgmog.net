@@ -38,7 +38,7 @@
     href="{{ site.url }}/feed.json"
   />
 
-  <link rel="stylesheet" href="{{ site.url }}/assets/style.css">
+  <link rel="stylesheet" href="{{ site.url }}/assets/style.css{% if site.github %}?{{site.github.build_revision}}{% endif %}">
 </head>
 <body>
   <h1>{{ site.url | replace: 'https://', '' | replace: 'http://', '' | replace: '/', '' }}</h1>
