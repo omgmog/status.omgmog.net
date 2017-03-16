@@ -65,8 +65,17 @@
           }
         });
         _thisdate.innerText = moment(_thisdate.innerText).fromNow();
-      });
 
+        var replies = _this.querySelector('.replies');
+        if (replies) {
+          replies.addEventListener('click', function (e) {
+            e = e || window.event;
+            e.stopPropagation();
+            var element = e.target.closest('.replies') || e.target;
+            _this.querySelector('.status-replies').classList.toggle('show');
+          }, true);
+        }
+      });
     }());
   </script>
 </body>

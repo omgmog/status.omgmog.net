@@ -138,8 +138,8 @@ article {
     margin-right: .5em;
   }
   &-reply {
-    width: 1.2em;
-    height: .9em;
+    width: 1.4em;
+    height: 1em;
   }
 }
 
@@ -162,19 +162,27 @@ article {
 }
 .replies {
   font-size: 1em;
-  height: 1em;
-  line-height: 1;
   color: #aab8c2;
   display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    color: #1b95e0;
+  }
 
   .svg {
     display: inline-block;
-    // float: left;
-    margin-right: .5em;
   }
   span {
-    font-size: .9em;
-    vertical-align: .3em;
+    font-size: .7em;
+    vertical-align: .5em;
+  }
+}
+.status-replies {
+  display: none;
+
+  &.show {
+    display: block;
   }
 }
 
