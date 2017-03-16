@@ -46,6 +46,7 @@
   <script src="{{ site.url }}/assets/moment.min.js"></script>
   <script src="{{ site.url }}/assets/linkify.min.js"></script>
   <script src="{{ site.url }}/assets/linkify-element.min.js"></script>
+  <script src="{{ site.url }}/assets/twemoji.min.js"></script>
   <script>
     (function () {
       'use strict';
@@ -56,6 +57,13 @@
         var _thisexcerpt = _this.querySelector('.excerpt');
         var _thisdate = _this.querySelector('.moment');
         linkifyElement(_thisexcerpt);
+        twemoji.parse(
+        _thisexcerpt,
+        {
+          callback: function(icon, options) {
+            return '{{ site.url }}/assets/twemoji-svg/' + icon + '.svg';
+          }
+        });
         _thisdate.innerText = moment(_thisdate.innerText).fromNow();
       });
 
