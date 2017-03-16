@@ -47,6 +47,7 @@
   <script src="{{ site.url }}/assets/linkify.min.js"></script>
   <script src="{{ site.url }}/assets/linkify-element.min.js"></script>
   <script src="{{ site.url }}/assets/twemoji.min.js"></script>
+  <script src="https://platform.twitter.com/widgets.js"></script>
   <script>
     (function () {
       'use strict';
@@ -56,7 +57,20 @@
         var _this = posts[key];
         var _thisexcerpt = _this.querySelector('.excerpt');
         var _thisdate = _this.querySelector('.moment');
+        // linkify links
         linkifyElement(_thisexcerpt);
+
+        // magically twitter oembed
+        var tweet_urls = _thisexcerpt.querySelectorAll('[href*="twitter.com"]');
+        [].forEach.call(tweet_urls, function (value, key) {
+          var twid = tweet_urls[key].href.split('/').slice(-1)[0];
+          // last bit of url should be ID
+          twttr.widgets.createTweet(twid, document.createElement('div')).then(function (el) {
+            _thisexcerpt.appendChild(el);
+          });
+        });
+
+        // twmojify emoji
         twemoji.parse(
         _thisexcerpt,
         {
@@ -64,8 +78,11 @@
             return '{{ site.url }}/assets/twemoji-svg/' + icon + '.svg';
           }
         });
+
+        // momentify dates
         _thisdate.innerText = moment(_thisdate.innerText).fromNow();
 
+        // bind reply toggles
         var replies = _this.querySelector('.replies');
         if (replies) {
           replies.addEventListener('click', function (e) {
