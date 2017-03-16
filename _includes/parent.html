@@ -1,0 +1,6 @@
+{% if status.parent %}
+{% assign parent = site.updates | where:"title",status.parent %}
+{% for status in parent %}
+  {% include single.html show_parent=false show_children=false %}
+{% endfor %}
+{% endif %}

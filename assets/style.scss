@@ -1,97 +1,28 @@
 ---
 ---
 
+// Core page styles
 html {
-  font-size: calc(1em + .5vw);
+  font-size: calc(.7em + .5vw);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  background-color: #f5f8fa;
+  color: #14171a;
 }
 
 body {
-  background-color: #f5f8fa;
-  color: #14171a;
   margin: 5% 10%;
   width: 600px;
   max-width: 80%;
+
 }
+
 h1 {
   color: #657786;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  font-size: 2rem;
-}
-article {
-  background-color: #fff;
-  border: 1px solid #e6ecf0;
-  padding: .5em;
-  padding-left: 3.5rem;
-  padding-bottom: .75em;
-  margin: 0;
-  overflow: hidden;
-  transition: background-color .2s ease;
-
-  + article {
-    border-top: 0;
-  }
-
-  &:first-of-type {
-    border-radius: .25em .25em 0 0;
-  }
-
-  &:last-of-type {
-    border-radius: 0 0 .25em .25em;
-  }
-  &:only-of-type {
-    border-radius: .25em;
-  }
-
-  &:hover {
-    background-color: #f5f8fa;
-  }
-}
-
-.excerpt {
-  padding: 9px 0;
-}
-.emoji {
-  width: 1.2em;
-  height: 1.2em;
-  display: inline-block;
-}
-h3 {
-  font-size: .6rem;
-  margin: 0;
-}
-.date {
-  font-weight: normal;
-  font-size: .9em;
-  color: #657786;
-}
-
-p,
-li {
-  font-size: .7rem;
-  line-height: 1rem;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-p {
-  margin: 0;
-
-  + p {
-    margin-top: 1em;
-  }
-}
-
-.avatar {
-  width: 2.5rem;
-  height: 2.5rem;
-  float: left;
-  margin-left: -3rem;
-  border-radius: .25rem;
-  border: 0;
+  font-size: 1.8rem;
 }
 
 a {
@@ -103,26 +34,99 @@ a {
   }
 }
 
-.share {
-  font-size: .8rem;
-  color: #aab8c2;
 
-  &:hover {
-    color: #17bf63;
+
+// Status styles
+
+article {
+  background-color: #fff;
+  border: 1px solid #e6ecf0;
+  margin: 0;
+  overflow: hidden;
+  padding: .5em;
+  padding-bottom: .75em;
+  padding-left: 3.5em;
+
+  + article {
+    border-top: 0;
   }
-  span {
-    display: none;
+  // Round the top corners of the first one
+  &:first-of-type {
+    border-radius: .25em .25em 0 0;
   }
+  // Round the bottom corners of the last one
+  &:last-of-type {
+    border-radius: 0 0 .25em .25em;
+  }
+  // Single one? round all corners
+  &:only-of-type {
+    border-radius: .25em;
+  }
+
+  .avatar {
+    width: 2.5em;
+    height: 2.5em;
+    float: left;
+    margin-left: -3em;
+    border-radius: .25em;
+    border: 0;
+  }
+
+  article {
+    padding-left: .5em;
+    font-size: .9em;
+
+    &:first-of-type {
+      margin-top: 1em;
+    }
+
+    .avatar {
+      display: none;
+    }
+  }
+
+  h3 {
+    font-size: .8em;
+    margin: 0;
+
+    time {
+      font-weight: normal;
+      color: #657786;
+      font-size: .9em;
+    }
+  }
+
+  .excerpt {
+    margin-bottom: .5em;
+
+    p, li {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    p {
+      margin: 0;
+
+      + p {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .emoji {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+  }
+
 }
 
 .svg {
-
   svg {
     width: 100%;
     height: auto;
     fill: currentColor;
   }
-
   &-retweet {
     width: 1.2em;
     height: .9em;
@@ -133,11 +137,45 @@ a {
     float: left;
     margin-right: .5em;
   }
+  &-reply {
+    width: 1.2em;
+    height: .9em;
+  }
 }
 
-.back {
-  font-size: .6rem;
+.share {
+  font-size: 1em;
+  color: #aab8c2;
   display: inline-block;
+  margin-right: 1em;
+
+  &:hover {
+    color: #17bf63;
+  }
+  span {
+    display: none;
+  }
+}
+.back {
+  font-size: .8rem;
+  display: inline-block;
+}
+.replies {
+  font-size: 1em;
+  height: 1em;
+  line-height: 1;
+  color: #aab8c2;
+  display: inline-block;
+
+  .svg {
+    display: inline-block;
+    // float: left;
+    margin-right: .5em;
+  }
+  span {
+    font-size: .9em;
+    vertical-align: .3em;
+  }
 }
 
 
@@ -145,5 +183,6 @@ a {
   body {
     width: auto;
     margin: 5%;
+    max-width: 90%;
   }
 }

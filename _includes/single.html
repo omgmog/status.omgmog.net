@@ -2,7 +2,7 @@
   <img src="{{ site.url }}/assets/max.jpg" class="avatar">
   <h3>
     <span class="name">{{ site.author.name }} </span>
-    <span class="date">&middot;
+    <time datetime="{{ status.title | date_to_rfc822 }}">&middot;
       <a
         href="{{ status.url }}"
         class="moment"
@@ -10,10 +10,16 @@
       >
         {{ status.title | date_to_rfc822 }}
       </a>
-    </span>
+    </time>
   </h3>
   <div class="excerpt">
     {{ status.content }}
   </div>
   {% include tweet_this.html %}
+  {% if include.show_children %}
+    {% include children.html %}
+  {% endif %}
+  {% if include.show_parent %}
+    {% include parent.html %}
+  {% endif %}
 </article>

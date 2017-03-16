@@ -1,0 +1,14 @@
+{% assign children = site.updates | where:"parent",status.title %}
+{% assign children_count = children | size %}
+{% if children_count > 0 %}
+<div class="replies">
+  {% include svg.html file="reply" %}
+  <span>{{ children_count }}</span>
+</div>
+<div class="status-replies">
+  {% for status in children %}
+    {% include single.html show_parent=false show_children=false %}
+  {% endfor %}
+</div>
+{% endif %}
+
