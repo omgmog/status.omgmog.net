@@ -148,6 +148,10 @@ article {
     width: 1.4em;
     height: 1em;
   }
+  &-source {
+    width: 1.2em;
+    height: .9em;
+  }
 }
 .status-icon-link {
   font-size: 1em;
@@ -165,6 +169,9 @@ article {
   &:hover {
     color: #17bf63;
   }
+}
+.source {
+
 }
 .back {
   font-size: .8rem;
