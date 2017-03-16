@@ -3,9 +3,9 @@
 
 // Core page styles
 html {
-  font-size: calc(.7em + .5vw);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+  line-height: 1.4;
   background-color: #f5f8fa;
   color: #14171a;
 }
@@ -43,9 +43,9 @@ article {
   border: 1px solid #e6ecf0;
   margin: 0;
   overflow: hidden;
-  padding: .5em;
-  padding-bottom: .75em;
-  padding-left: 3.5em;
+  padding: 1em;
+  padding-bottom: 1.25em;
+  padding-left: 4em;
 
   + article {
     border-top: 0;
@@ -73,7 +73,7 @@ article {
   }
 
   article {
-    padding-left: .5em;
+    padding-left: 1em;
     font-size: .9em;
 
     &:first-of-type {
