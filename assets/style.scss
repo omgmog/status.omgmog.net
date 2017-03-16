@@ -149,18 +149,21 @@ article {
     height: 1em;
   }
 }
-
-.share {
+.status-icon-link {
   font-size: 1em;
   color: #aab8c2;
   display: inline-block;
   margin-right: 1em;
+  cursor: pointer;
+
+  span {
+    display: none;
+  }
+}
+.share {
 
   &:hover {
     color: #17bf63;
-  }
-  span {
-    display: none;
   }
 }
 .back {
@@ -168,11 +171,6 @@ article {
   display: inline-block;
 }
 .replies {
-  font-size: 1em;
-  color: #aab8c2;
-  display: inline-block;
-  cursor: pointer;
-
   &:hover {
     color: #1b95e0;
   }
@@ -181,6 +179,7 @@ article {
     display: inline-block;
   }
   span {
+    display: inline-block;
     font-size: .7em;
     vertical-align: .5em;
   }

@@ -1,7 +1,7 @@
 {% assign children = site.updates | where:"parent",status.title %}
 {% assign children_count = children | size %}
 {% if children_count > 0 %}
-<div class="replies">
+<div class="replies status-icon-link">
   {% include svg.html file="reply" %}
   <span>{{ children_count }}</span>
 </div>
