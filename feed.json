@@ -8,13 +8,13 @@ layout: # no layout
     "title": "{{ site.title }}",
     "description": "",
     "link": "{{ site.url }}",
-    "updated":"{% for post in posts limit:1 %}{{ post.title | date_to_rfc822 }}{% endfor %}",
+    "updated":"{% for post in posts limit:1 %}{{ post.title | date_to_xmlschema }}{% endfor %}",
     "author": "{{ site.author.name }}",
     "entry": [
     {% for post in posts limit:10 %}
         {
             "id": "{{ post.id }}",
-            "published": "{{ post.title | date_to_rfc822 }}",
+            "published": "{{ post.title | date_to_xmlschema }}",
             "title": "{{ post.title | strip_html | escape }}",
             "summary": "{{ post.excerpt | strip_html | strip_newlines }}",
             "link": "{{ site.url }}{{ post.url }}",

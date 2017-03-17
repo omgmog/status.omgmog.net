@@ -2,11 +2,12 @@
   <img src="{{ site.url }}/assets/max.jpg" class="avatar">
   <h3>
     <span class="name">{{ site.author.name }} </span>
-    <time datetime="{{ status.title | date_to_rfc822 }}">&middot;
+    <time datetime="{{ status.title | date_to_xmlschema }}">&middot;
       <a
         href="{{ status.url }}"
         class="moment"
         title="{{ status.title | date_to_rfc822 }}"
+        datetime="{{ status.title | date_to_xmlschema }}"
       >
         {{ status.title | date_to_rfc822 }}
       </a>

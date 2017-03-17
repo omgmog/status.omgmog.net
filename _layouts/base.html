@@ -78,9 +78,9 @@
             return '{{ site.url }}/assets/twemoji-svg/' + icon + '.svg';
           }
         });
-
         // momentify dates
-        _thisdate.innerText = moment(_thisdate.innerText).fromNow();
+        var relative_date = moment(_thisdate.getAttribute('datetime')).fromNow();
+        _thisdate.innerText = relative_date;
 
         // bind reply toggles
         var replies = _this.querySelector('.replies');
