@@ -16,6 +16,11 @@
   <div class="excerpt">
     {{ status.content }}
   </div>
+  {% if status.attachment %}
+    <div class="attachment">
+      <img src="{{ status.attachment }}" alt="Attachment for {{ status.title }}" />
+    </div>
+  {% endif %}
   {% include tweet_this.html %}
   {% include source.html %}
   {% if include.show_children %}
