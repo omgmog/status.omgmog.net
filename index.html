@@ -4,7 +4,7 @@ layout: base
 
 {% assign updates = site.updates | reverse %}
 {% for status in updates %}
-  {% include single.html show_parent=true show_children=true %}
+  {% include single.html show_parent=true show_children=true expand_children=false %}
 {% else %}
   <p>Nothing here yet...</p>
 {% endfor %}
