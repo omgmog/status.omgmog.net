@@ -20,6 +20,7 @@
 
 
   <!-- other -->
+  <meta name="theme-color" content="#111111">
 
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <link rel="canonical" href="{{ site.url }}" />
@@ -39,6 +40,8 @@
   />
 
   <link rel="stylesheet" href="{{ site.url }}/assets/style.css{% if site.github %}?{{site.github.build_revision}}{% endif %}">
+  <link rel="stylesheet" href="{{ site.url }}/assets/pygments.css{% if site.github %}?{{site.github.build_revision}}{% endif %}">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
 </head>
 <body>
   <h1>{{ site.url | replace: 'https://', '' | replace: 'http://', '' | replace: '/', '' }}</h1>
@@ -58,7 +61,14 @@
         var _thisexcerpt = _this.querySelector('.excerpt');
         var _thisdate = _this.querySelector('.moment');
         // linkify links
-        linkifyElement(_thisexcerpt);
+        linkifyElement(_thisexcerpt, {
+          ignoreTags: ['pre', 'code'],
+          validate: {
+            url: function (value) {
+              return /^(http)s?:\/\//.test(value);
+            }
+          }
+        });
 
         // magically twitter oembed
         var tweet_urls = _thisexcerpt.querySelectorAll('[href*="twitter.com"]');
@@ -81,17 +91,6 @@
         // momentify dates
         var relative_date = moment(_thisdate.getAttribute('datetime')).fromNow();
         _thisdate.innerText = relative_date;
-
-        // bind reply toggles
-        var replies = _this.querySelector('.replies');
-        if (replies) {
-          replies.addEventListener('click', function (e) {
-            e = e || window.event;
-            e.stopPropagation();
-            var element = e.target.closest('.replies') || e.target;
-            _this.querySelector('.status-replies').classList.toggle('show');
-          }, true);
-        }
       });
     }());
   </script>
